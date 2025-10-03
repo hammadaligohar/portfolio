@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #64b5f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #90caf9;
+}
+
+header {
+  background-color: #1e1e1e;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  user-select: none;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: #64b5f6;
+  user-select: none;
+}
+nav a {
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: #64b5f6;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  padding: 140px 40px 120px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  box-shadow: 0 4px 25px rgb(100 181 246 / 0.6);
+}
+.hero h2 {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px #64b5f6;
+  animation: fadeInDown 1s ease forwards;
+}
+.hero p {
+  font-size: 24px;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 1.3s ease forwards;
+  text-shadow: 0 0 12px #90caf9;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 25px;
+}
+section {
+  margin-bottom: 80px;
+}
+h3 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #64b5f6;
+  border-bottom: 4px solid #64b5f6;
+  display: inline-block;
+  padding-bottom: 8px;
+  letter-spacing: 1.5px;
+  user-select: none;
+}
+
+p {
+  font-size: 19px;
+  color: #cfd8dc;
+  max-width: 750px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+ul.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 750px;
+}
+ul.skills-list li {
+  background: linear-gradient(135deg, #64b5f6, #90caf9);
+  color: #121212;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 20px rgba(100, 181, 246, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+ul.skills-list li:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 30px rgba(144, 202, 249, 0.9);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 40px;
+  max-width: 1000px;
+}
+.project-card {
+  background: #1e1e1e;
+  padding: 30px 32px;
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.9);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+}
+.project-card:hover {
+  box-shadow: 0 22px 60px rgba(100, 181, 246, 0.9);
+  transform: translateY(-14px);
+}
+.project-card h4 {
+  margin-bottom: 18px;
+}
