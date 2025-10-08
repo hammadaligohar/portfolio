@@ -75,6 +75,28 @@
     &copy; 2025 Hammad Ali. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>
+  <script >
+    const menuIcon = document.getElementById('menu-icon');
+const nav = document.querySelector('header nav');
+
+menuIcon.addEventListener('click', () => {
+  menuIcon.classList.toggle('active');
+  nav.classList.toggle('active');
+});
+
+// Fade-in on scroll
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+sections.forEach(section => observer.observe(section));
+
+  </script>
 </body>
 </html>
